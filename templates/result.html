@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separate Human Images from Other Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sample-image {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .download-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.mymcpl.org/sites/default/files/2022-07/What%20Is%20a%20Zip%20File.jpg" alt="Sample Image" class="sample-image">
+
+        <h1>Separate Human Images from Other Images</h1>
+        <div class="links">
+            <a href="{{ url_for('download', category='human') }}">
+                <button class="download-button">Download Human Images</button>
+            </a>
+            <a href="{{ url_for('download', category='non_human') }}">
+                <button class="download-button">Download Non-Human Images</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
